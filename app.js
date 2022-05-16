@@ -17,8 +17,12 @@ app.get('/', async (req, res, next) => {
         res.json({
             statusCode: 200,
             message: "News recieved succesfully!",
-            data: news.data
+            data: news.data.articles
+            // data: news.data.articles.filter()
+            // })
         })
+        next()
+
     } catch(error) {
         if(error.response) {
             res.json({
